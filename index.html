@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <p v-once>{{showTitle()}} - {{changeTitle()}}</p>
+      <p v-html="testHTML"></p>
+      <a href="link">abc</a>
+    </div>
+  </body>
+  <script>
+    new Vue({
+      el: "#app",
+      data: {
+        noidung: "Hello World",
+        title: "Khuat Duy Manh",
+        link: "https://vi.vuejs.org/v2/guide/computed.html",
+        testHTML: '<h2>HELLO WORLD</h2>'
+      },
+      methods: {
+        sayHello: function () {
+          window.alert("Say Hello");
+        },
+        showTitle: function () {
+          return this.title;
+        },
+        changeTitle: function () {
+          return (this.title = "Hoc lap trinh");
+        },
+      },
+    });
+  </script>
+</html>
